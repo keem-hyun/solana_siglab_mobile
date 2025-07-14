@@ -1,0 +1,65 @@
+# OSX
+#
+.DS_Store
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+.cxx/
+
+# Bundle artifacts
+*.jsbundle
+
+# android keystore
+app/debug.keystore
+app/release.keystore
+*.keystore
+
+# compile
+.kotlin/
+
+# Gradle Wrapper
+gradle-wrapper.jar
+gradle-wrapper.properties
+
+# Android Studio
+.externalNativeBuild/
+.navigation/
+captures/
+output.json
+
+# Signing files
+app/src/main/assets/appcenter-config.json
+app/src/main/res/values/generated.xml
+
+# NDK
+obj/
+*.so
+
+# Proguard
+proguard/
+
+# APK files
+*.apk
+*.aab
+
+# DexGuard
+*.dex
+
+# Fabric plugin
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Temporary files
+*.tmp
+*.temp
+
+# Android Profiler
+*.hprof

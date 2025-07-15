@@ -12,6 +12,7 @@ import React from "react";
 import { Appearance, useColorScheme } from "react-native";
 import * as Screens from "../screens";
 import { HomeNavigator } from "./HomeNavigator";
+import OnboardingScreen from "../screens/OnboardingScreen";
 import { StatusBar } from "expo-status-bar";
 import {
   MD3DarkTheme,
@@ -33,7 +34,8 @@ import {
  */
 
 type RootStackParamList = {
-  Home: undefined;
+  Onboarding: undefined;
+  HomeStack: undefined;
   Settings: undefined;
   // 🔥 Your screens go here
 };
@@ -49,13 +51,17 @@ const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   return (
-    <Stack.Navigator initialRouteName={"Home"}>
+    <Stack.Navigator initialRouteName={"Onboarding"}>
+      <Stack.Screen
+        name="Onboarding"
+        component={OnboardingScreen}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="HomeStack"
         component={HomeNavigator}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="Settings" component={Screens.SettingsScreen} />
       {/** 🔥 Your screens go here */}
     </Stack.Navigator>
   );

@@ -4,7 +4,9 @@ import { TopBar } from "../components/top-bar/top-bar-feature";
 import { HomeScreen } from "../screens/HomeScreen";
 import MaterialCommunityIcon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useTheme } from "react-native-paper";
-import BlankScreen from "../screens/BlankScreen";
+import ChatScreen from "../screens/ChatScreen";
+import MapScreen from "../screens/MapScreen";
+import { SettingsScreen } from "../screens/SettingsScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,20 +24,26 @@ export function HomeNavigator() {
         header: () => <TopBar />,
         tabBarIcon: ({ focused, color, size }) => {
           switch (route.name) {
-            case "Home":
+            case "Chat":
               return (
                 <MaterialCommunityIcon
-                  name={focused ? "home" : "home-outline"}
+                  name={focused ? "chat" : "chat-outline"}
                   size={size}
                   color={color}
                 />
               );
-            case "Blank":
+            case "Map":
               return (
                 <MaterialCommunityIcon
-                  name={
-                    focused ? "application-edit" : "application-edit-outline"
-                  }
+                  name={focused ? "map" : "map-outline"}
+                  size={size}
+                  color={color}
+                />
+              );
+            case "Settings":
+              return (
+                <MaterialCommunityIcon
+                  name={focused ? "cog" : "cog-outline"}
                   size={size}
                   color={color}
                 />
@@ -44,8 +52,21 @@ export function HomeNavigator() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Blank" component={BlankScreen} />
+      <Tab.Screen 
+        name="Chat" 
+        component={ChatScreen}
+        options={{ title: "AI 채팅" }}
+      />
+      <Tab.Screen 
+        name="Map" 
+        component={MapScreen}
+        options={{ title: "지도" }}
+      />
+      <Tab.Screen 
+        name="Settings" 
+        component={SettingsScreen}
+        options={{ title: "설정" }}
+      />
     </Tab.Navigator>
   );
 }

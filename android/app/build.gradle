@@ -95,9 +95,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.solana.mobile.expo.template'
+    namespace 'com.web3.siglab'
     defaultConfig {
-        applicationId 'com.solana.mobile.expo.template'
+        applicationId 'com.web3.siglab'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

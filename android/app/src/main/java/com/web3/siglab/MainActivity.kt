@@ -1,4 +1,4 @@
-package com.solana.mobile.expo.template
+package com.web3.siglab
 
 import android.os.Build
 import android.os.Bundle

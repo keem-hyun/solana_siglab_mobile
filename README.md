@@ -34,7 +34,7 @@ This template is a ready-to-go Android Expo dApp that offers:
 | spl-token             | SDK               | v0.4    | Library for building with Solana SPL tokens           |
 | React Native Paper    | Component Library | v5.12   | Production-ready components following Material Design |
 | React Navigation      | Navigation        | v6      | Performant and consistent navigation framework        |
-| React Query           | State management  | v5.24   | Async query management                                |
+| TanStack Query        | State management  | v5.24   | Server state & async query management                |
 | TypeScript            | Language          | v5      | Static typechecking                                   |
 | AsyncStorage          | Persistence       | v1.23   | State persistence                                     |
 
@@ -299,10 +299,27 @@ Once your app is initialized, follow the **["Running the app"](https://docs.sola
 ## 기술 스택
 
 ### Frontend (Mobile)
-- **react-native(expo)** - 크로스 플랫폼 개발
-- **typescript** - 주 개발 언어
+- **React Native (Expo v53)** - 크로스 플랫폼 개발
+- **TypeScript** - 주 개발 언어
+- **TanStack Query** - 서버 상태 관리
+- **Zustand** - 클라이언트 상태 관리 (Context 유지)
+- **React Navigation v6** - 네비게이션
+- **React Native Maps** - 구글맵 통합
+- **Expo Location** - GPS 위치 서비스
 - **Solana Mobile Wallet Adapter** - 블록체인 연동
 - **Speech-to-Text/Text-to-Speech** - 음성 인터페이스
+
+### Architecture Pattern
+- **Feature-based Architecture** - 기능별 모듈화 구조
+- **Clean Architecture principles** - 관심사 분리
+- **Modern React Native Stack**: Expo Router + TanStack Query + Zustand
+
+#### Context Preservation Strategy
+AI 에이전트와의 대화 및 사용자 세션 간 컨텍스트 유지:
+- **Zustand + AsyncStorage**: 사용자 선호도 및 대화 기록 영구 저장
+- **Feature-별 Context Store**: 각 기능(맵, 보험, 채팅)별 상태 관리
+- **Cross-Feature Communication**: 전역 이벤트 시스템으로 기능 간 통신
+- **TanStack Query**: 서버 데이터 캐싱으로 오프라인에서도 컨텍스트 유지
 
 ### AI & Backend
 - **Python (FastAPI)** - 백엔드 API
